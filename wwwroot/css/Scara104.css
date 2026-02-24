@@ -1,0 +1,20 @@
+﻿body {
+}
+
+
+tr:nth-of-type(4n) {
+    background-color: lightsteelblue
+}
+
+tr:nth-of-type(4n+1) {
+    background-color: lightsteelblue
+}
+
+tr:nth-of-type(4n+2) {
+    background-color: aliceblue
+}
+
+tr:nth-of-type(4n+3) {
+    background-color: aliceblue
+}
+

@@ -1,0 +1,15 @@
+﻿body {
+}
+
+.doll3 {
+    background-color: aquamarine;
+}
+
+    .doll3:hover {
+        background-color: seagreen;
+        color: antiquewhite;
+    }
+
+.doll2 {
+    background-color: lavender
+}

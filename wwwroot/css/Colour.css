@@ -1,0 +1,15 @@
+﻿#doll {
+    background-color:lightsteelblue;
+}
+    
+
+#doll0 {
+    background-color: aquamarine;    
+}
+
+    #doll0:hover {
+        background-color:lightseagreen;
+        transition: 0.7s;
+    }
+
+    

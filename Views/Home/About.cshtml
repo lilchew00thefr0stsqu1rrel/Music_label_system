@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MvcMusicDistr.Models.GaitViewModels.GaitGroup>
+
+@{
+    ViewData["Title"] = "Статистика по аллюру";
+}
+
+<h2>Статистика по аллюру</h2>
+
+<table>
+    <tr>
+        <th>
+            GaitID
+        </th>
+        <th>
+            Pairs
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GaitID)
+            </td>
+            <td>
+                @item.PairCount
+            </td>
+        </tr>
+    }
+</table>

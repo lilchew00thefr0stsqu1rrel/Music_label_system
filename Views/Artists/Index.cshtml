@@ -1,0 +1,69 @@
+﻿@model MvcMusicDistr.Models.ArtistSubstanceViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link rel="stylesheet" type="text/css" href="/css/Colour.css" />
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form class="btn" asp-controller="Artists" asp-action="Xml">
+    <button value="/artists/xml" id="doll0" formtarget="_blank">
+        Создать XML по таблице
+    </button>
+</form>
+<form asp-controller="Artists" asp-action="Index">
+    <p>
+        <select asp-for="ArtistSubstance" asp-items="Model.Substances">
+            <option value="">All</option>
+        </select>
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<table class="table" id="doll">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Artists![0].Nickname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Artists![0].Animal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Artists![0].Substance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Artists![0].Reason)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Artists!) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nickname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Animal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Substance)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Reason)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

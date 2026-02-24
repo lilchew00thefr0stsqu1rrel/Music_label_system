@@ -1,0 +1,59 @@
+﻿@model MvcMusicDistr.Models.Gait
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/Scara104.css" />
+
+<h1>Details</h1>
+
+<div>
+    <h4>Gait</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PairID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PairID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pairs)
+        </dt>
+        <dd class="col-sm-10">
+            <table class="table">
+                <tr>
+                    <th>~</th>
+                    <th>Левая</th>
+                    <th>Правая</th>
+                    <th>*</th>
+                </tr>
+                @foreach (var item in Model.Pairs)
+                {
+                    <tr class="doll2">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OnGroundLeft)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OnGroundRight)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

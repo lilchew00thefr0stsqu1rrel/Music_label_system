@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MvcMusicDistr.Models.Beat>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link rel="stylesheet" type="text/css" href="/css/Colour.css"/>
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form class="btn" asp-controller="Beats" asp-action="Xml">
+    <button value="/beats/xml" id="doll0" formtarget="_blank">
+      Создать XML по таблице
+    </button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beatmaker)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tonality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BPM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beatmaker)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tonality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BPM)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+            </td>
+                
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

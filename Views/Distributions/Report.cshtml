@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model IEnumerable<MvcMusicDistr.Models.Distribution>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div>
+    @*<p>Начало периода: </p>
+    <p>Конец Периода: </p>*@
+</div>
+
+@*
+    Имитация работы 1С регистров накопления
+*@
+
+<div>
+  
+    <p>
+        В выбранном месяце @ViewData["UserMonthSum"] рублей
+    </p>
+    <div class="form-group">
+        <input type="submit" value="Выбрать" class="btn btn-primary" />
+    </div>
+
+</div>
